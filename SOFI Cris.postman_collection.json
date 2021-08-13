@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "de4a3183-cb5e-4418-ad3f-02a6b22f4e19",
+		"name": "SOFI Cris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cris",
+			"item": [
+				{
+					"name": "Evento Nuevo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code === 200){\r",
+									"    tests[\"Response OK 200\"] = responseCode.code === 200; \r",
+									"    pm.test(\"FormatOK\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 400){\r",
+									"    tests[\"Response OK 400\"] = responseCode.code === 400; \r",
+									"    pm.test(\"BadFormat\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 401){\r",
+									"    tests[\"Response OK 401\"] = responseCode.code === 401; \r",
+									"    pm.test(\"Unauthorized\") \r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 500){\r",
+									"    tests[\"Response OK 500\"] = responseCode.code === 500; \r",
+									"    pm.test(\"Internal Server Error\") \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"EnterpriseId\" : 12345678912345,\r\n\t\"ErpCompanyId\" : \"768299d3-117e-474a-9c99-1365d4ff6bb3\",\r\n\t\"OportunidadId\" : 11,\r\n\t\"TagTipoEvento\" : \"datosFiscales\",\r\n\t\"TagEvento\" : \"InicioLlenadoFormularioDatosFiscalesSAT123\",\r\n\t\"FechaHora\" : \"2021-08-04T18:30:15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sofi-test.gestionix.com/api/Sofi/evento",
+							"protocol": "https",
+							"host": [
+								"sofi-test",
+								"gestionix",
+								"com"
+							],
+							"path": [
+								"api",
+								"Sofi",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuenta ERP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code === 200){\r",
+									"    tests[\"Response OK 200\"] = responseCode.code === 200; \r",
+									"    pm.test(\"FormatOK\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 400){\r",
+									"    tests[\"Response OK 400\"] = responseCode.code === 400; \r",
+									"    pm.test(\"BadFormat\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 401){\r",
+									"    tests[\"Response OK 401\"] = responseCode.code === 401; \r",
+									"    pm.test(\"Unauthorized\") \r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 500){\r",
+									"    tests[\"Response OK 500\"] = responseCode.code === 500; \r",
+									"    pm.test(\"Internal Server Error\") \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"gestionix_company_guid\": \"372ED65A-CB95-4CDA-A2D3-999A8A918CAF\",\r\n\t\"cfg_certificados_configurados_fecha_at\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"company_register_date\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_company_last_seen\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_company_sesiones_web\": 30,\r\n\t\"uso_fecha_primera_factura_at\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_cotizaciones\": 200,\r\n\t\"uso_total_ventas_facturadas\": 100,\r\n\t\"uso_total_traspasos_entre_sucursales\": 2,\r\n\t\"uso_total_ventas_sin_facturar\": 10,\r\n\t\"uso_total_ventas_pos_sin_facturar\": 10,\r\n\t\"uso_total_ventas_pos_facturadas\": 100,\r\n\t\"eliminada\": false,\r\n\t\"uso_fecha_primer_descarga_carga_xml_egresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_descarga_carga_xml_egresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_descarga_carga_xml_egresos\": 5,\r\n\t\"uso_fecha_primer_descarga_carga_xml_ingresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_descarga_carga_xml_ingresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_descarga_carga_xml_ingresos\": 30,\r\n\t\"uso_fecha_primer_carga_xml_ingresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_carga_xml_ingresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_carga_xml_ingresos\": 30,\r\n\t\"uso_fecha_primer_carga_xml_egresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_carga_xml_egresos\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_carga_xml_egresos\": 5,\r\n\t\"cfg_fecha_ciec\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_recibos_de_nomina\": 3,\r\n\t\"uso_fecha_primer_recibo_nomina\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultimo_recibo_nomina\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primera_cotizacion\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_cotizacion\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primer_traspaso_entre_sucursales\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultimo_traspaso_entre_sucursales\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primera_venta_facturada\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_venta_facturada\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primera_venta_sin_facturar\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_venta_sin_facturar\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primera_venta_pos_sin_facturar\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_venta_pos_sin_facturar\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_primera_venta_pos_facturada\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_venta_pos_facturada\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_total_carta_porte\": 1,\r\n\t\"uso_fecha_primer_carta_porte\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"uso_fecha_ultima_carta_porte\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"cfg_punto_de_venta_activacion_fecha_at\": \"2021-07-26T08:00:00.000Z\",\r\n\t\"cfg_punto_de_venta_descarga_fecha_at\": \"2021-07-26T08:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sofi-test.gestionix.com/api/Sofi/cuentaERP",
+							"protocol": "https",
+							"host": [
+								"sofi-test",
+								"gestionix",
+								"com"
+							],
+							"path": [
+								"api",
+								"Sofi",
+								"cuentaERP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Display X Abandono",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code === 200){\r",
+									"    tests[\"Response OK 200\"] = responseCode.code === 200; \r",
+									"    pm.test(\"FormatOK\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 400){\r",
+									"    tests[\"Response OK 400\"] = responseCode.code === 400; \r",
+									"    pm.test(\"BadFormat\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 401){\r",
+									"    tests[\"Response OK 401\"] = responseCode.code === 401; \r",
+									"    pm.test(\"Unauthorized\") \r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 500){\r",
+									"    tests[\"Response OK 500\"] = responseCode.code === 500; \r",
+									"    pm.test(\"Internal Server Error\") \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"enterpriseId\": 1234,\r\n    \"web_element_id\" : \"trial-abandono-recuperacion-btn-2021_08_05\",\r\n    \"utm_source\" : \"\",\r\n    \"utm_medium\" : \"\",\r\n    \"utm_campaign\" : \"\",\r\n    \"utm_content\" : \"\",\r\n    \"utm_term\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sofi-test.gestionix.com/api/Sofi/DisplayWebElement",
+							"protocol": "https",
+							"host": [
+								"sofi-test",
+								"gestionix",
+								"com"
+							],
+							"path": [
+								"api",
+								"Sofi",
+								"DisplayWebElement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A/B Testing Journey",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code === 200){\r",
+									"    tests[\"Response OK 200\"] = responseCode.code === 200; \r",
+									"    pm.test(\"FormatOK\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 400){\r",
+									"    tests[\"Response OK 400\"] = responseCode.code === 400; \r",
+									"    pm.test(\"BadFormat\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 401){\r",
+									"    tests[\"Response OK 401\"] = responseCode.code === 401; \r",
+									"    pm.test(\"Unauthorized\") \r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 500){\r",
+									"    tests[\"Response OK 500\"] = responseCode.code === 500; \r",
+									"    pm.test(\"Internal Server Error\") \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"enterprise_id\" : 1234,\r\n\t\"company_id\" : \"ABCD-1234-....\",\r\n\t\"trigger\" : \"facturador_inicio_journey\",\r\n\t\"abTestingName\" : \"abTesting_facturador_2021_08_05_registro_datos\",\r\n    \"utm_source\" : \"\",\r\n    \"utm_medium\" : \"\",\r\n    \"utm_campaign\" : \"\",\r\n    \"utm_content\" : \"\",\r\n    \"utm_term\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sofi-test.gestionix.com/api/Sofi/DisplayJourneyABTesting",
+							"protocol": "https",
+							"host": [
+								"sofi-test",
+								"gestionix",
+								"com"
+							],
+							"path": [
+								"api",
+								"Sofi",
+								"DisplayJourneyABTesting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpGrade de SKU",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(responseCode.code === 200){\r",
+									"    tests[\"Response OK 200\"] = responseCode.code === 200; \r",
+									"    pm.test(\"FormatOK\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 400){\r",
+									"    tests[\"Response OK 400\"] = responseCode.code === 400; \r",
+									"    pm.test(\"BadFormat\")\r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 401){\r",
+									"    tests[\"Response OK 401\"] = responseCode.code === 401; \r",
+									"    pm.test(\"Unauthorized\") \r",
+									"}\r",
+									"\r",
+									"else if (responseCode.code === 500){\r",
+									"    tests[\"Response OK 500\"] = responseCode.code === 500; \r",
+									"    pm.test(\"Internal Server Error\") \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"enterprise_id\" : 1234,\r\n  “company_id” : “ABCD-1234-….“,\r\n  \"utm_source\" : null,\r\n  \"utm_medium\" : null,\r\n  \"utm_campaign\" : null,\r\n  \"utm_content\" : null,\r\n  \"utm_term\" : null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sofi-test.gestionix.com/api/Sofi/upgradeskulist",
+							"protocol": "https",
+							"host": [
+								"sofi-test",
+								"gestionix",
+								"com"
+							],
+							"path": [
+								"api",
+								"Sofi",
+								"upgradeskulist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

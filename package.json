@@ -1,0 +1,12 @@
+{
+  "name": "postman",
+  "version": "1.0.0",
+  "description": "QA Test Konfio",
+  "scripts": {
+    "api-tests-production": "newman run tests/SOFI Cris.postman_collection.json"
+  },
+  "author": "Cristian Diaz",
+  "dependencies": {
+    "newman": "^5.2.4"
+  }
+}
